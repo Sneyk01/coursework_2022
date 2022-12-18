@@ -41,7 +41,11 @@
   ### Описание API сервера и хореографии
   Для удобного взаимодействия telegram бота с сервером, был написан api. На данный момент сервер умеет обрабатывать get, post и put запросы от telegram бота. Ниже приведены схемы обмена данными между сервером и telegram ботом.
   
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/Bot_get.svg"/width = 50%></p>
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/bot_get.svg"/width = 50%></p>
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/bot_post.svg"/width = 50%></p>
+  id в базе данных
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/bot_put.svg"/width = 50%></p>
+  
   
   ### Описание структуры базы данных
   Для хранения данных об учетных записях будет использоваться MySQL. Для каждой роли (администратор, житель и гость) будет создана своя таблица.
