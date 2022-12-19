@@ -104,5 +104,9 @@
      "creation_time": 1668967113
  }
   ```
+  
+  ### Описание алгоритмов
+  #### Алгоритм telegram бота
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s2.svg"></p>
 
  
