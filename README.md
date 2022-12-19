@@ -52,7 +52,7 @@
 
   #### Примеры пользовательских сценариев
   
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s1.svg"/width = 50%></p>
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s1.svg"></p>
   
   
   ### Описание API сервера и хореографии
