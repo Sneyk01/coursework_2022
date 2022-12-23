@@ -108,5 +108,17 @@
   ### Описание алгоритмов
   #### Алгоритм telegram бота
   <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s2.svg"></p>
+  
+  #### Алгоритмы API
+  Ниже представлены три алгоритма обработки API запросов от бота:
+  
+  Алгоритм обработки GET запроса:
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-GET.svg"/width = 50%></p>
+  
+  Алгоритм обработки POST запроса:
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-POST.svg"/width = 50%></p>
+  
+  Алгоритм обработки PUT запроса:
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-PUT.svg"/width = 50%></p>
 
  
