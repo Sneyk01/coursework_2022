@@ -1,0 +1,27 @@
+li {
+    list-style-type: none;
+}
+
+.btn-success,
+.btn-success:active,
+.btn-success:visited {
+    background-color: #63D708 !important;
+}
+
+.btn-success:hover {
+    background-color: #469707 !important;
+    transition: all 1s ease;
+
+
+}
+
+
+
+.header_div {
+    height: 55px;
+    background-color: #63D708 !important;
+}
+
+.row {
+    height: 60vh;
+}
