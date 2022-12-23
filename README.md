@@ -40,11 +40,11 @@
   В редакторе Figma был разработан прототип пользовательского интерфейса:
   
   Страница авторизации админ панели:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/authorization.svg"/width = 70%></p>
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/authorization.svg"/width = 80%></p>
 
   
   Главная страница админ панели:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/main_screen.svg"/width = 70%></p>
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/main_screen.svg"/width = 80%></p>
 
   
   ### Описание пользовательских сценариев
