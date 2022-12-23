@@ -5,7 +5,7 @@ from telebot import types
 
 
 # Создаем экземпляр бота
-token = '5635571884:AAG77p4QXauXyvHePxpIP9pg1bJEOlSItp8'
+token = '' # Необходимо ввести API токен бота
 bot = telebot.TeleBot(token)
 
 # Адрес для api запросов
