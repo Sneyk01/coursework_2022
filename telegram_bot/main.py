@@ -59,7 +59,7 @@ def handle_text(message):
             if message.text.strip() == 'Справка':
                 bot.send_message(message.from_user.id, 'Справка будет позже')
 
-            if message.text.strip() != 'Справка' and message.text.strip() != 'Добавить гостя':
+            if message.text.strip() != 'Справка' and message.text.strip() != 'Создать аккаунт':
                 bot.send_message(message.from_user.id, 'Я вас не понимаю')
 
         if users[str(message.from_user.id)].id is not None:
