@@ -5,11 +5,11 @@ from telebot import types
 
 
 # Создаем экземпляр бота
-token = '' # Необходимо ввести API токен бота
+token = '5635571884:AAG77p4QXauXyvHePxpIP9pg1bJEOlSItp8'
 bot = telebot.TeleBot(token)
 
 # Адрес для api запросов
-url = "http://192.168.0.103/api"
+url = "http://192.168.0.114/api"
 users = {}
 
 
@@ -29,7 +29,7 @@ markup.add(item2)
 
 def send_message(message):
     bot.send_message(message.from_user.id, users[str(message.from_user.id)].message)
-    users[str(message.from_user.id)].message=None
+    users[str(message.from_user.id)].message = None
 
 
 # Функция, обрабатывающая команду /start
