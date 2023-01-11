@@ -13,7 +13,7 @@ $data = get_visitors($link);
 
 foreach ($data as $person) {
     if ($person["creation_time"] + $visitors_time < time()) {
-        $sql = "DELETE FROM `visitors_table` WHERE `visitors_table`.`id` = ".$visitor["id"].";";    // Удаляем запись в таблице
+        $sql = "DELETE FROM `visitors_table` WHERE `visitors_table`.`id` = ".$person["id"].";";    // Удаляем запись в таблице
         //$result = mysqli_query($link, $sql);
         continue;
     }
