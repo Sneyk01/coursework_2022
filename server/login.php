@@ -1,3 +1,10 @@
+<?php
+include_once "functions.php";
+if (check_cookie())
+    header("location: main.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -6,7 +13,7 @@
     <meta charset="utf-8">
     <!-- Настройка viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Main </title>
+    <title> Login </title>
 
     <link rel="stylesheet" href="css/styles.css">
 
@@ -24,12 +31,12 @@
 <div class="header_div mb-5" > <h1 class="text-white mb-3" style="margin-left: 1%"> Панель администратора  </h1> </div>
 
 <div class="container">
-    <div class="row justify-content-center align-items-center">
-        <div class="col"> </div>
-        <div class="col">
+    <div class="row justify-content-center align-items-center row_h">
+        <div class="col-1"> </div>
+        <div class="col-lg-4">
             <form id = "login">
                 <ul>
-                    <li class="mb-4"> <p style="height: 15px; color: red" class="text-center" id="message">  </p> </li>
+                    <li class="mb-4"> <p style="height: 15px; color: red" class="text-center" id="message"> <?php message();?>  </p> </li>
 
                     <li> <input class="form-control" type="text" name="login" placeholder="Имя пользователя" </li>
                     <li class="mb-3"></li>
@@ -40,7 +47,7 @@
             </form>
 
         </div>
-        <div class="col"> </div>
+        <div class="col-1"> </div>
     </div>
 </div>
 </body>
@@ -57,7 +64,7 @@
                 dataType: 'html',
                 data: $(this).serialize(),
                 success: function (data){
-                    if (data === "Try") {
+                    if (data === "True") {
                         location.href = "main.php"
                     }
                     else
@@ -65,6 +72,9 @@
                 }
             })
         })
+
+        if (window.location.search !== "")  // Если есть get параметры, то удаляем их. (Для сообщения об окончании сессии и чтобы было красиво)
+            window.history.pushState({}, document.title, "login.php");
     })
 </script>
 
