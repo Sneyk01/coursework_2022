@@ -154,6 +154,7 @@ $("document").ready(function (){
             dataType: 'html',
             data: $(this).serialize(),
             success: function (data){
+                old_token(data);
                 let message = document.getElementById("a_message")
                 data = JSON.parse(data);
                 if (data["result"] === "True") {
@@ -197,4 +198,6 @@ function old_token(data) {
     }
     if (data.length > 2900)
         location.replace("../login.php");
+
+        //$(document).html(data);
 }

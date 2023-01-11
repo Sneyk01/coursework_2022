@@ -7,6 +7,7 @@ $("document").ready(function () {
             dataType: 'html',
             data: $(this).serialize(),
             success: function (data){
+                old_token(data);
                 let message = document.getElementById("message")
                 data = JSON.parse(data);
                 if (data["result"] === "True") {
@@ -31,6 +32,7 @@ $("document").ready(function () {
             dataType: 'html',
             data: $(this).serialize(),
             success: function (data){
+                old_token(data);
                 let message = document.getElementById("visitor_message")
                 data = JSON.parse(data);
                 if (data["result"] === "True") {
