@@ -2,6 +2,10 @@ li {
     list-style-type: none;
 }
 
+.container-fluid {
+    max-width: 99%;!important;
+}
+
 .btn-success,
 .btn-success:active,
 .btn-success:visited {
@@ -15,13 +19,64 @@ li {
 
 }
 
+.btn-light,
+.btn-light:active,
+.btn-light:visited {
+    background: #FFFFFF !important; /* Цвет фона */
+
+}
+
+.btn-light:hover {
+    background-color: #FF9930 !important;
+    transition: all 1s ease;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited {
+    background: #FF9900 !important; /* Цвет фона */
+}
+
+.btn-primary:hover {
+    background-color: #FF7600 !important;
+    transition: all 1s ease;
+}
+
+.btn-warning,
+.btn-warning:active,
+.btn-warning:visited {
+    background: #FAA629 !important; /* Цвет фона */
+}
+
+.btn-warning:hover {
+    background-color: #FA9600 !important;
+}
 
 
 .header_div {
     height: 55px;
-    background-color: #63D708 !important;
+    background-color: #8BEA00 !important;
 }
 
-.row {
+.row_h {
     height: 60vh;
+}
+
+
+.scrollable {
+    height: 80vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.successfully {
+    animation: color-change 2s;
+}
+
+@keyframes color-change {
+    0% { background-color: #FFFFFF; }
+    50% { background-color: #63D708; }
+    100% { background-color: #FFFFFF; }
 }
