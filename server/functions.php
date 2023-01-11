@@ -69,7 +69,7 @@ function get_residents($link): array
 
 function get_visitors($link): array
 {
-    $sql = "SELECT * FROM visitors_table";
+    $sql = "SELECT * FROM visitors_table ORDER BY id";
     $result = mysqli_query($link, $sql);
     return mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
@@ -109,15 +109,16 @@ function check_car_number($number): bool
 function check_number_duplicate($number, $link): bool
 {
     $result = get_residents($link);
+
     foreach ($result as $resident) {
-        if (strpos($resident["car_numbers"], $number) !== false) {    // If number contain in resident table
+        $numbers = explode(";", $resident["car_numbers"]);
+        if (in_array($number, $numbers))
             return false;
-        }
     }
 
     $result = get_visitors($link);
     foreach ($result as $resident) {
-        if (strpos($resident["car_number"], $number) !== false) {    // If number contain in visitors table
+        if ($resident["car_number"] == $number) {    // If number contain in visitors table
             return false;
         }
     }
