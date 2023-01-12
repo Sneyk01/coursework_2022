@@ -237,3 +237,13 @@
  
  Алгоритм изменения записей в таблицах:
  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-change_table.svg"/width = 30%></p>
+ 
+ Алгоритм удаления записей в таблицах:
+ <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-delete.svg"/width = 30%></p>
+ 
+ Алгоритм смены пароля от учетной записи:
+ <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-change_password.svg"/width = 30%></p>
+ 
+ Алгоритм выхода из учетной записи:
+ <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-exit.svg"/width = 12%></p>
+ 
