@@ -54,19 +54,27 @@
 
 
   Всплывающее окно добавления новой записи жителя:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_1.png"/width = 40%></p>
+  <table><tr><td>
+  <img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_1.png">
+  </td></tr></table>
   
   
   Всплывающее окно редактирования записи жителя:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_1.1.png"/width = 40%></p>
+  <table><tr><td>
+  <img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_1.1.png">
+  </td></tr></table>
   
 
   Всплывающее окно добавления новой записи гостя:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_2.png"/width = 40%></p>
+  <table><tr><td>
+  <img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_2.png">
+  </td></tr></table>
   
   
   Всплывающее окно редактирования записи гостя:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_2.1.png"/width = 40%></p>
+  <table><tr><td>
+  <img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_2.1.png">
+  </td></tr></table>
 
   ### Описание пользовательских сценариев
   #### Описание процесса регистрации жителя
