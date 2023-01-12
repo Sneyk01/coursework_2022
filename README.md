@@ -206,6 +206,10 @@
   <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/telegram_bot.svg"></p>
   
   #### Алгоритмы API
+    
+  Алгоритм обработке GET запроса от шлагбаума:
+<p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-GET-barier.svg"/width = 50%></p>
+
   Ниже представлены три алгоритма обработки API запросов от бота:
   
   Алгоритм обработки GET запроса:
@@ -216,8 +220,15 @@
   
   Алгоритм обработки PUT запроса:
   <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-PUT.svg"/width = 30%></p>
-  
-  
-  Алгоритм обработке GET запроса от шлагбаума:
-<p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-GET-barier.svg"/width = 50%></p>
+
+ #### Алгоритмы панели администратора
+ 
+ Алгоритм страницы авторизации login.php:
+ <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-login.svg"/width = 30%></p>
+ 
+ Алгоритм функции проверки токена:
+ <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-check_token.svg"/width = 30%></p>
+ 
+ Алгоритм верхних кнопок панели администратора:
+ <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-top_buttons.svg"/width = 30%></p>
  
