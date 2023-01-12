@@ -43,10 +43,30 @@
   
   Главная страница админ панели:
   <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/main_screen.svg"/width = 80%></p>
+  
+  
+  Вкладка настроект админ панели:
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/setting.png"/width = 80%></p>
+    
+  
+  Вкладка настроект аккаунта администратора:
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/account.png"/width = 80%></p>
 
 
   Всплывающее окно добавления новой записи жителя:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_1.png"/width = 80%></p>
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_1.png"/width = 40%></p>
+  
+  
+  Всплывающее окно редактирования записи жителя:
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_1.1.png"/width = 40%></p>
+  
+
+  Всплывающее окно добавления новой записи гостя:
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_2.png"/width = 40%></p>
+  
+  
+  Всплывающее окно редактирования записи гостя:
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_2.1.png"/width = 40%></p>
 
   ### Описание пользовательских сценариев
   #### Описание процесса регистрации жителя
