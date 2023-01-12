@@ -46,11 +46,11 @@
   
   
   Вкладка настроект админ панели:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/setting.png"/width = 80%></p>
+  img
     
   
   Вкладка настроект аккаунта администратора:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/account.png"/width = 80%></p>
+  img
 
 
   Всплывающее окно добавления новой записи жителя:
@@ -94,6 +94,10 @@
   #### Примеры пользовательских сценариев
   
   <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s1.svg"></p>
+  
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s2.svg"></p>
+  
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s3.svg"></p>
   
   
   ### Описание API сервера и хореографии
@@ -193,7 +197,7 @@
   
   ### Описание алгоритмов
   #### Алгоритм telegram бота
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s2.svg"></p>
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/telegram_bot.svg"></p>
   
   #### Алгоритмы API
   Ниже представлены три алгоритма обработки API запросов от бота:
