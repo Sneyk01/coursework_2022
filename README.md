@@ -227,8 +227,13 @@
  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-login.svg"/width = 30%></p>
  
  Алгоритм функции проверки токена:
- <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-check_token.svg"/width = 30%></p>
+ <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-check_token.svg"/width = 55%></p>
  
  Алгоритм верхних кнопок панели администратора:
- <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-top_buttons.svg"/width = 30%></p>
+ <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-top_buttons.svg"/width = 18%></p>
  
+ Алгоритм кнопок добавления записей:
+ <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-add_buttons.svg"/width = 30%></p>
+ 
+ Алгоритм изменения записей в таблицах:
+ <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-change_table.svg"/width = 30%></p>
