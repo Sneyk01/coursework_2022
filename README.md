@@ -42,15 +42,15 @@
 
   
   Главная страница админ панели:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/main_screen.svg"/width = 80%></p>
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/main.svg"/width = 80%></p>
   
   
   Вкладка настроект админ панели:
-  img
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/setting.svg"/width = 80%></p>
     
   
   Вкладка настроект аккаунта администратора:
-  img
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/change_password.svg"/width = 80%></p>
 
 
   Всплывающее окно добавления новой записи жителя:
