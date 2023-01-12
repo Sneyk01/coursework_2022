@@ -93,15 +93,18 @@
 
   #### Примеры пользовательских сценариев
   
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s1.svg"></p>
+  - Сценарий 1
+  <p align = "left"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s1.svg"></p>
   
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s2.svg"></p>
+  - Сценарий 2
+  <p align = "left"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s2.svg"></p>
   
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s3.svg"></p>
+  - Сценарий 3
+  <p align = "left"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/s3.svg"></p>
   
   
   ### Описание API сервера и хореографии
-  Для удобного взаимодействия telegram бота с сервером, был написан api. На данный момент сервер умеет обрабатывать get, post и put запросы от telegram бота. Ниже приведены схемы обмена данными между сервером и telegram ботом:
+  #### Для удобного взаимодействия telegram бота с сервером, был написан api. На данный момент сервер умеет обрабатывать get, post и put запросы от telegram бота. Ниже приведены схемы обмена данными между сервером и telegram ботом:
   
   1. Когда боту необходимо узнать информацию о пользователе, он отправляет get запрос содержащий telegram id аккаунта. Если записи об этом пользователе имеются в базе данных, сервер вернет нужную боту информацию. В противном случае, бот получит JSON файл вида: {result: "False"}. Пример get запроса представлен ниже:
   <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/bot_get.svg"/width = 50%></p>
@@ -112,7 +115,10 @@
   3. Когда боту необходимо завершить регистрацию пользователя, путем добавления его telegram id в базу данных, он отправляет put запрос, содержащий ключ регистрации и telegram id пользователя, который отправил этот ключ. Если регистрациооный ключ был найден в базе данных, то сервер отправит боту всю необходимую информацию об этом пользователе в JSON файле. В противном случае, сервер вернет JSON файл вида: {result: "False"}. Пример put запроса представлен ниже:
   <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/bot_put.svg"/width = 50%></p>
   
- Шлагбаум для общения с сервером также использует api. Сервер может обработать get запрос от шлагбаума с запросом на наличие автомобильного номера в одной из таблиц. Если номер есть в базе данных, сервер вернет {result: "True"}, в противном случае - {result: "False"}. Пример get запроса представлен ниже:
+  
+ #### Шлагбаум для общения с сервером также использует api. На данный момент сервер может обработать get запрос от шлагбаума.
+ 
+ 1. Когда шлагбауму необходимо узнать, есть ли номер машины в базе данных или нет, он отправляет get запрос содержаший номер автомобиля. Если номер есть в базе данных, сервер вернет {result: "True"}, в противном случае - {result: "False"}. Пример get запроса представлен ниже:
   <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/barier_get.svg"/width = 50%></p>
   
   
@@ -210,5 +216,7 @@
   
   Алгоритм обработки PUT запроса:
   <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-PUT.svg"/width = 30%></p>
-
+  
+  Алгоритм обработке GET запроса от шлагбаума:
+<p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-GET-barier.svg"/width = 30%></p>
  
