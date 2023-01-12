@@ -46,7 +46,7 @@
 
 
   Всплывающее окно добавления новой записи жителя:
-  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal.1.png"/width = 80%></p>
+  <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/modal_1.png"/width = 80%></p>
 
   ### Описание пользовательских сценариев
   #### Описание процесса регистрации жителя
