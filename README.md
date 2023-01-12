@@ -217,6 +217,7 @@
   Алгоритм обработки PUT запроса:
   <p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-PUT.svg"/width = 30%></p>
   
+  
   Алгоритм обработке GET запроса от шлагбаума:
-<p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-GET-barier.svg"/width = 30%></p>
+<p align = "center"><img src="https://github.com/Sneyk01/coursework_2022/blob/main/images/schemes-GET-barier.svg"/width = 50%></p>
  
