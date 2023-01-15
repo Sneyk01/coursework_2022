@@ -83,7 +83,7 @@ if ($_POST["method"] == "edit" && $_POST["table_type"] == "visitors_table") {
 }
 
 if ($_POST["method"] == "edit_setting") {
-    if ($_POST["value"] < 60) { // защита от слишком маленьких значений
+    if ($_POST["value"] < 60 || !is_numeric($_POST["value"])) { // защита от слишком маленьких значений и букв
         $sql = "SELECT * FROM `parameters` WHERE `id` = '".$_POST["id"]."';";
         $result = mysqli_query($link, $sql);
         $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
