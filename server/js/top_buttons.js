@@ -40,8 +40,15 @@ $("document").ready(function (){
         clearInterval(auto_update);
 
         let cookie = document.cookie;
-        let array = cookie.split("=");
-        cookie = (array[0] === "Token")? array[1] : null;
+        let array = cookie.split("; ");
+        cookie = null;
+        for (let i = 0; i < array.length; i++) {
+            let array2 = array[i].split("=");
+            if (array2[0] === "Token") {
+                cookie = array2[1];
+                break;
+            }
+        }
         $.ajax({
             url: "exit.php",
             type: "POST",
