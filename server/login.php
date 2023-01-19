@@ -1,7 +1,7 @@
 <?php
 include_once "functions.php";
 if (check_cookie())
-    header("location: main.php");
+    header("location: index.php");
 
 ?>
 
@@ -65,7 +65,7 @@ if (check_cookie())
                 data: $(this).serialize(),
                 success: function (data){
                     if (data === "True") {
-                        location.href = "main.php"
+                        location.href = "index.php"
                     }
                     else
                         $("#message").html(data);
