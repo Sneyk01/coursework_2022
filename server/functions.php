@@ -115,11 +115,22 @@ function check_number_duplicate($number, $link): bool
         if (in_array($number, $numbers))
             return false;
     }
-
+    
+    $setting = get_params($link);
+        $visitors_time = 86400; // Значение по умолчанию (1 день)
+        foreach ($setting as $param)
+            if ($param["Name"] == "visitors_time")
+                $visitors_time = $param["Value"];
+    
     $result = get_visitors($link);
-    foreach ($result as $resident) {
-        if ($resident["car_number"] == $number) {    // If number contain in visitors table
-            return false;
+    foreach ($result as $visitor) {
+        if ($visitor["car_number"] == $number) {    // If number contain in visitors table
+            if ($visitor["creation_time"] + $visitors_time >= time())
+                return false;
+            else {
+                $sql = "DELETE FROM `visitors_table` WHERE `visitors_table`.`id` = ".$visitor["id"].";";    // Delete old number
+                $result = mysqli_query($link, $sql);
+            }       
         }
     }
 
