@@ -104,7 +104,7 @@
   
   Если пользователь находится на вкладке просмотра списка жильцов или гостей, то этот список будет автоматически сверяться с базой данных и обновляться раз в минуту.
   
-  При каждом обновлении таблицы гостей или при api запросе данных из этой таблицы, происходит проверка времени действия автомобильных номеров, и старые записи удаляются.
+  При каждом обновлении таблицы гостей или при запросе на создание новой гостевой записи, происходит проверка времени действия автомобильных номеров, и старые записи удаляются. (Проверка при запросе происходит для того, чтобы при добавлении записи о госте через telegram бота "просроченные", но еще не удаленные номера не мешали занять нужный номер)
 
   #### Примеры пользовательских сценариев
   
@@ -314,11 +314,22 @@ function check_number_duplicate($number, $link): bool
         if (in_array($number, $numbers))
             return false;
     }
-
+    
+    $setting = get_params($link);
+        $visitors_time = 86400; // Значение по умолчанию (1 день)
+        foreach ($setting as $param)
+            if ($param["Name"] == "visitors_time")
+                $visitors_time = $param["Value"];
+    
     $result = get_visitors($link);
-    foreach ($result as $resident) {
-        if ($resident["car_number"] == $number) {    // If number contain in visitors table
-            return false;
+    foreach ($result as $visitor) {
+        if ($visitor["car_number"] == $number) {    // If number contain in visitors table
+            if ($visitor["creation_time"] + $visitors_time >= time())
+                return false;
+            else {
+                $sql = "DELETE FROM `visitors_table` WHERE `visitors_table`.`id` = ".$visitor["id"].";";    // Delete old number
+                $result = mysqli_query($link, $sql);
+            }       
         }
     }
 
