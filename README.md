@@ -18,7 +18,7 @@
 
 ## Доступ
 Курсовая работа доступна по адресу: http://u142567.test-handyhost.ru/. Используется хостинг от handyhost.
-При желании проект можно запустить самостоятельно. Для этого необходимо загрузить файлы из папки server в расположение своего сервера и импортировать базу данных MySQL из бэкапа "kpp_coursework.sql".
+При желании проект можно запустить самостоятельно. Для этого необходимо загрузить файлы из папки server в расположение своего сервера, импортировать базу данных MySQL из бэкапа "kpp_coursework.sql" и настроить параметры подключения к базе данных в файле "funcions.php".
 
 ## Используемые технологии
 
@@ -263,3 +263,147 @@
  
  ### Значимые фрагменты кода
  
+Функция проверки токена авторизации:
+```sh
+function check_cookie() {   // Если токен подходит - true, иначе просто отпраавляем на login.php
+    $link = connect_db();
+    $token = isset($_COOKIE["Token"]) ? $_COOKIE["Token"] : null;
+
+    if($token == null) {
+        if ($_SERVER["REQUEST_URI"] == "/login.php")    // Если мы уже на login.php (иначе постоянная пересылка)
+            return false;
+        //echo json_encode(["result" => "Token"]);
+        header("location: login.php");
+        exit();
+    }
+
+    $data = get_admins($link);
+
+    foreach ($data as $admin) {
+        if ($admin["token"] === $token) {
+            global $TOKEN_TIME;
+            if (($admin["time"] + get_token_time()) >= time())
+                return true;
+            else {  // Удаляем старый токен
+                $sql = "UPDATE `admin_table` SET `token` = '' WHERE `admin_table`.`token` = '".$token."';";
+                $result = mysqli_query($link, $sql);
+                header("location: login.php?s");
+                //echo json_encode(["result" => "Token_s"]);
+                exit();
+            }
+        }
+    }
+
+    if ($_SERVER["REQUEST_URI"] == "/login.php" || $_SERVER["REQUEST_URI"] == "/login.php?s") // Сообщение о сессии
+        return false;
+    header("location: login.php");
+    //echo json_encode(["result" => "Token"]);
+    exit();
+}
+```
+
+Функция проверки автомобильного номера на повторения:
+```sh
+function check_number_duplicate($number, $link): bool
+{
+    $result = get_residents($link);
+
+    foreach ($result as $resident) {
+        $numbers = explode(";", $resident["car_numbers"]);
+        if (in_array($number, $numbers))
+            return false;
+    }
+
+    $result = get_visitors($link);
+    foreach ($result as $resident) {
+        if ($resident["car_number"] == $number) {    // If number contain in visitors table
+            return false;
+        }
+    }
+
+    return true;
+}
+```
+Пример ajax запроса:
+```sh
+$("document").ready(function () {
+        $("#login").on("submit", function(){
+            //alert("wow");
+            event.preventDefault();
+            $.ajax({
+                url: 'handler.php',
+                type: 'POST',
+                dataType: 'html',
+                data: $(this).serialize(),
+                success: function (data){
+                    if (data === "True") {
+                        location.href = "index.php"
+                    }
+                    else
+                        $("#message").html(data);
+                }
+            })
+        })
+```
+
+Функция вывода списка жителей:
+```sh
+$data = get_residents($link);
+
+foreach ($data as $person) {
+    echo "<div class='row' id='r".$person["id"]."'>";
+    echo "<div class='col-1  border-bottom border-end border-start border-dark'> <h6 class='mb-2' align='center' id='resident_i".$person['id']."'>".$person["id"]."</h6></div>";
+    echo "<div class='col-2  border-bottom border-end border-dark'> <h6 class='mb-2' align='center' id='resident_f".$person['id']."'>".$person["first_name"]."</h6></div>";
+    echo "<div class='col-2 border-bottom border-end border-dark'> <h6 class='mb-2' align='center' id='resident_l".$person['id']."'>".$person["last_name"]."</h6></div>";
+    echo "<div class='col-2 border-bottom border-end border-dark'> <h6 class='mb-2' align='center' id='resident_c".$person['id']."'>".$person["car_numbers"]."</h6></div>";
+    echo "<div class='col-1 border-bottom border-end border-dark'> <h6 class='mb-2' align='center' id='resident_h".$person['id']."'>".$person["house_number"]."</h6></div>";
+    echo "<div class='col-1 border-bottom border-end border-dark'> <h6 class='mb-2' align='center' id='resident_t".$person['id']."'>".$person["telegram_id"]."</h6></div>";
+    echo "<div class='col-1 border-bottom border-end border-dark'> <h6 class='mb-2' align='center' id='resident_k".$person['id']."'>".$person["secret_key"]."</h6></div>";
+    echo "<div class='col-1 mb-1'>"."<button value='".$person["id"]."' class='btn btn-warning border border-dark col-12 text-white edit' data-bs-toggle='modal' data-bs-target='#editFormModal'> Изменить </button>"."</div>";
+    echo "<div class='col-1 mb-1'>"."<button value='".$person["id"]."' class='btn btn-danger border border-dark col-12 delete'> Удалить </button>"."</div>";
+    echo "</div>";
+}
+```
+Основа обработчика api запросов:
+```sh
+header('Content-type: application/json; charset=UTF-8');
+
+$answer = ["result" => "False"];
+
+$method = $_SERVER['REQUEST_METHOD'];
+$o_data = get_data($method);
+
+$request = parse_get();
+$router = $request[0];
+$data = array_slice($request, 1);
+
+if (file_exists("routers/".$router.".php")) {
+    include_once "routers/".$router.".php";
+    $answer = route($method, $data, $o_data);
+}
+
+echo json_encode($answer);
+
+
+function parse_get() {
+    $result = (isset($_GET["q"])) ? $_GET["q"] : "";
+    $result = rtrim($result, "/");
+    return explode("/", $result);
+}
+
+
+function get_data($method) {
+    if ($method == "GET") return $_GET;
+    if ($method == "POST") return $_POST;
+
+    $data = array();
+    $exploded = explode('&', file_get_contents("php://input"));
+    foreach ($exploded as $pair) {
+        $item = explode("=", $pair);
+        if (count($item) == 2) {
+            $data[urldecode($item[0])] = urldecode($item[1]);
+        }
+    }
+    return $data;
+}
+```
