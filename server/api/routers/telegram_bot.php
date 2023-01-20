@@ -22,7 +22,7 @@ function route($method, $data, $o_data) {
         if (!check_number_duplicate($o_data["number"], $link))
             return ["result" => "False", "message" => "Данный номер уже есть в списке"];
 
-        $sql = "INSERT INTO `visitors_table` (`id`, `car_number`, `inviting_id`, `creation_time`) VALUES (NULL, ' ".$o_data['number']."', '".$o_data['user_id']."', '".time()."');";
+        $sql = "INSERT INTO `visitors_table` (`id`, `car_number`, `inviting_id`, `creation_time`) VALUES (NULL, '".$o_data['number']."', '".$o_data['user_id']."', '".time()."');";
         $add = mysqli_query($link, $sql);
         return ["result" => "True"];
     }
