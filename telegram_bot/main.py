@@ -57,7 +57,13 @@ def handle_text(message):
                 bot.send_message(message.chat.id, 'Для создания аккаунта введите пригласительный код:')
                 bot.register_next_step_handler(message, register)
             if message.text.strip() == 'Справка':
-                bot.send_message(message.from_user.id, 'Справка будет позже')
+                bot.send_message(message.from_user.id, 'Это telegram бот для жителей котеджного поселка "...", '
+                                                       'с помощью этого бота вы можете добавлять автомобильные номера '
+                                                       'ваших гостей в базу данных шлагбаума, чтобы они могли попасть '
+                                                       'на территорию. Если у вас уже есть учетная '
+                                                       'запись гостя - нажмите "Создать аккаунт" и введите ключ '
+                                                       'регистрации. Если у вас еще нет учетной записи - обратитесь '
+                                                       'к администратору. Контакты для связи: ...')
 
             if message.text.strip() != 'Справка' and message.text.strip() != 'Создать аккаунт':
                 bot.send_message(message.from_user.id, 'Я вас не понимаю')
@@ -67,7 +73,12 @@ def handle_text(message):
                 bot.send_message(message.from_user.id, 'Введить автомобильный номер гостя в формате а000аа:')
                 bot.register_next_step_handler(message, register_visitor)
             if message.text.strip() == 'Справка':
-                bot.send_message(message.from_user.id, 'Аккаунт активирован')
+                bot.send_message(message.from_user.id, 'Ваш аккаунт активирован. '
+                                                       'Для добавления гостевой записи нажмите "добавить гостя" '
+                                                       'и после этого введите автомобильный номер. После одного '
+                                                       'проезда или по истечению срока действия '
+                                                       '(1 день по умолчанию, подробности у администратора) '
+                                                       'номер будет удален')
 
             if message.text.strip() != 'Справка' and message.text.strip() != 'Добавить гостя':
                 bot.send_message(message.from_user.id, 'Я вас не понимаю')
