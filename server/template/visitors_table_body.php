@@ -1,5 +1,6 @@
 <?php
 include_once ($_SERVER["DOCUMENT_ROOT"]."/functions.php");
+check_cookie();
 
 $link = connect_db();
 
