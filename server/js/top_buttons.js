@@ -66,13 +66,13 @@ $("document").ready(function (){
         clearInterval(auto_update);
 
         $.get("template/setting_head.php", function (html) {
-            check_html_for_header(html);
-            $("#table_head").html(html);
+            if (!check_html_for_header(html))
+                $("#table_head").html(html);
         })
 
         $.get("template/setting_body.php", function (html) {
-            check_html_for_header(html);
-            $("#table_body").html(html);
+            if (!check_html_for_header(html))
+                $("#table_body").html(html);
         })
     })
 
@@ -80,31 +80,34 @@ $("document").ready(function (){
         clearInterval(auto_update);
 
         $.get("template/account_head.php", function (html) {
-            check_html_for_header(html);
-            $("#table_head").html(html);
+            if (!check_html_for_header(html))
+                $("#table_head").html(html);
         })
         //$("#table_head").empty();
         $.get("template/account_body.php", function (html) {
-            check_html_for_header(html);
-            $("#table_body").html(html);
+            if (!check_html_for_header(html))
+                $("#table_body").html(html);
         })
     })
 })
 
 function residents_body() {
     $.get("template/residents_table_body.php", function (html) {
-        check_html_for_header(html);
-        $("#table_body").html(html);
+        if (!check_html_for_header(html))
+            $("#table_body").html(html);
     })
 }
 function visitors_body() {
     $.get("template/visitors_table_body.php", function (html) {
-        check_html_for_header(html);
-        $("#table_body").html(html);
+        if (!check_html_for_header(html))
+            $("#table_body").html(html);
     })
 }
 
 function check_html_for_header(html) {
-    if (html.indexOf("<!DOCTYPE html>") > 0)
+    if (html.indexOf("<!DOCTYPE html>") > 0) {
         document.location.replace("/login.php")
+        return true;
+    }
+    return false;
 }
