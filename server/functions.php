@@ -18,7 +18,7 @@ function check_cookie() {   // Если токен подходит - true, ин
         if ($_SERVER["REQUEST_URI"] == "/login.php")    // Если мы уже на login.php (иначе постоянная пересылка)
             return false;
         //echo json_encode(["result" => "Token"]);
-        header("location: login.php");
+        header("location: /login.php");
         exit();
     }
 
@@ -32,7 +32,7 @@ function check_cookie() {   // Если токен подходит - true, ин
             else {  // Удаляем старый токен
                 $sql = "UPDATE `admin_table` SET `token` = '' WHERE `admin_table`.`token` = '".$token."';";
                 $result = mysqli_query($link, $sql);
-                header("location: login.php?s");
+                header("location: /login.php?s");
                 //echo json_encode(["result" => "Token_s"]);
                 exit();
             }
@@ -41,7 +41,7 @@ function check_cookie() {   // Если токен подходит - true, ин
 
     if ($_SERVER["REQUEST_URI"] == "/login.php" || $_SERVER["REQUEST_URI"] == "/login.php?s") // Сообщение о сессии
         return false;
-    header("location: login.php");
+    header("location: /login.php");
     //echo json_encode(["result" => "Token"]);
     exit();
 }
