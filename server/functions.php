@@ -49,13 +49,15 @@ function check_cookie() {   // Если токен подходит - true, ин
 
 function get_params($link) {
     $sql = "SELECT * FROM parameters";
-    return mysqli_query($link, $sql);
+    $result = mysqli_query($link, $sql);
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
 
 function get_admins($link) {
     $sql = "SELECT * FROM admin_table";
-    return mysqli_query($link, $sql);
+    $result = mysqli_query($link, $sql);
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
 
