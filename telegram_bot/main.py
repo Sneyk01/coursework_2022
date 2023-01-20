@@ -5,11 +5,11 @@ from telebot import types
 
 
 # Создаем экземпляр бота
-token = '5635571884:AAG77p4QXauXyvHePxpIP9pg1bJEOlSItp8'
+token = '' // API ключ бота
 bot = telebot.TeleBot(token)
 
 # Адрес для api запросов
-url = "http://u142567.test-handyhost.ru/api"
+url = "http://u142567.test-handyhost.ru/api" // Адрес сайта
 users = {}
 
 
