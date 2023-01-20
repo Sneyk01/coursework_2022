@@ -18,14 +18,14 @@ if (file_exists("routers/".$router.".php")) {
 echo json_encode($answer);
 
 
-function parse_get() {
+function parse_get() {          // Данные из преобразованной строки запроса 
     $result = (isset($_GET["q"])) ? $_GET["q"] : "";
     $result = rtrim($result, "/");
     return explode("/", $result);
 }
 
 
-function get_data($method) {
+function get_data($method) {    // Данные в запросе
     if ($method == "GET") return $_GET;
     if ($method == "POST") return $_POST;
 
