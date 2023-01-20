@@ -2,6 +2,11 @@ li {
     list-style-type: none;
 }
 
+h6 {
+    overflow: hidden;
+    overflow-x: auto;
+}
+
 .container-fluid {
     max-width: 99%;!important;
 }
