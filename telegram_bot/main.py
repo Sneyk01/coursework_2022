@@ -9,7 +9,7 @@ token = '5635571884:AAG77p4QXauXyvHePxpIP9pg1bJEOlSItp8'
 bot = telebot.TeleBot(token)
 
 # Адрес для api запросов
-url = "http://192.168.0.114/api"
+url = "http://u142567.test-handyhost.ru/api"
 users = {}
 
 

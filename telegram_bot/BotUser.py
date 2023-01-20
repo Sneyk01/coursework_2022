@@ -1,5 +1,7 @@
 import json
 import requests
+cookies = dict(handyhosttrial="yes")
+'''Чтобы обойти сообщение бесплатного хостинга'''
 
 json_string = """ {
   "result": "True",  
@@ -25,7 +27,7 @@ class BotUser:
 
             self.telegram_id = telegram_id
             if url is not None:
-                response = requests.get(url + "/telegram_bot/id/" + str(telegram_id))
+                response = requests.get(url + "/telegram_bot/id/" + str(telegram_id),  cookies=cookies)
                 answer = json.loads(response.text)
 
             if answer["result"] == "True":
@@ -42,7 +44,7 @@ class BotUser:
 
     def request_register(self, url, key, telegram_id):
         data = {"key": str(key), "telegram_id": str(telegram_id)}
-        response = requests.put(url + "/telegram_bot/", data)
+        response = requests.put(url + "/telegram_bot/", data, cookies=cookies)
         print(str(response.text))
         answer = json.loads(response.text)
         if answer["result"] == "True":
@@ -50,7 +52,7 @@ class BotUser:
 
     def add_visitor(self, url, visitor_number):
         data = {"number": str(visitor_number), "user_id": str(self.id)}
-        response = requests.post(url + "/telegram_bot/", data)
+        response = requests.post(url + "/telegram_bot/", data, cookies=cookies)
         answer = json.loads(response.text)
         if answer["result"] == "False":
             self.message = answer["message"]
