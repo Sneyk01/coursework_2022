@@ -106,7 +106,7 @@ function visitors_body() {
 
 function check_html_for_header(html) {
     if (html.indexOf("<!DOCTYPE html>") > 0) {
-        document.location.replace("/login.php")
+        location.replace("/login.php")
         return true;
     }
     return false;
