@@ -103,7 +103,10 @@ function check_car_number($number): bool
 {
     if (mb_strlen($number) < 6)
         return false;
-
+        
+    if( !(preg_match("/\b\w{1}\d{3}\w{2}\d{0,3}\b/iu",$number)))
+        return false;
+        
     return true;
 }
 
