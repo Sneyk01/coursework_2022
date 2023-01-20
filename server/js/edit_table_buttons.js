@@ -192,12 +192,12 @@ function edit_visitor_table(data) {
 
 
 function old_token(data) {
-    if (data.length > 2910) {
-        location.replace("../login.php?s");
-        return;
+    if (html.indexOf("<!DOCTYPE html>") > 0) {
+        if (data.length > 2910) {
+            location.replace("../login.php?s");
+            return;
+        }
+        if (data.length > 2900)
+            location.replace("../login.php");
     }
-    if (data.length > 2900)
-        location.replace("../login.php");
-
-        //$(document).html(data);
 }
